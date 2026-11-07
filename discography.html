@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discography — Noah. Official</title>
+  <meta name="description" content="Full discography of NOAH® with release dates, labels, UPC and ISRC codes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+/* NOAH® — noahmusic.com — shared styles */
+
+:root {
+  --paper:  #ffffff;
+  --ink:    #111111;
+  --gray:   #6b6b66;
+  --hair:   #e8e7e4;
+  --wash:   #f4f4f2;
+  --sans:   'Jost', 'Helvetica Neue', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ---------- announcement bar ---------- */
+.bar {
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 14px 20px;
+}
+.bar a { border-bottom: 1px solid rgba(255,255,255,0.4); padding-bottom: 1px; }
+.bar a:hover { border-color: #fff; }
+
+/* ---------- masthead ---------- */
+.masthead { text-align: center; padding: 72px 24px 0; }
+.masthead.compact { padding-top: 48px; }
+
+.wordmark {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(28px, 4.6vw, 48px);
+  line-height: 1.15;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.masthead.compact .wordmark { font-size: clamp(18px, 2.6vw, 26px); }
+.wordmark sup {
+  font-family: var(--sans);
+  font-size: 0.14em;
+  font-weight: 400;
+  vertical-align: super;
+  color: var(--gray);
+}
+
+.tagline {
+  margin: 34px auto 0;
+  font-size: 13px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gray);
+  line-height: 1.7;
+  max-width: 760px;
+}
+.masthead.compact .tagline { margin-top: 20px; font-size: 11px; }
+
+/* ---------- nav ---------- */
+nav {
+  margin-top: 56px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 36px;
+  font-size: 13px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+.masthead.compact nav { margin-top: 36px; }
+nav a {
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+nav a:hover { border-color: var(--ink); }
+nav a.active { color: var(--gray); }
+
+/* ---------- socials ---------- */
+.socials {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.socials a {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.socials a:hover { opacity: 0.75; transform: translateY(-2px); }
+.socials svg { width: 18px; height: 18px; fill: currentColor; }
+
+/* ---------- page content ---------- */
+.page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+.page h2 {
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.page p { font-size: 16px; line-height: 1.55; letter-spacing: 0.02em; color: #333; margin-bottom: 16px; }
+.page .lede { font-size: 18px; color: var(--ink); }
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+/* portrait / hero image */
+.portrait { max-width: 620px; margin: 56px auto 0; padding: 0 24px; }
+.portrait img { width: 100%; }
+
+/* ---------- chart table ---------- */
+.chart-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 32px 0; }
+.chart-table th {
+  text-align: left;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gray);
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--ink);
+}
+.chart-table td {
+  padding: 14px 10px;
+  border-bottom: 1px solid var(--hair);
+  vertical-align: top;
+  line-height: 1.6;
+}
+.chart-table td:first-child { white-space: nowrap; font-weight: 400; }
+
+/* ---------- press logos ---------- */
+.press {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  align-items: center;
+  margin: 48px 0 0;
+}
+
+/* ---------- embeds ---------- */
+.embed { margin: 0 0 28px; }
+.embed iframe { width: 100%; border: 0; display: block; }
+.embed-label {
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin: 0 0 8px;
+}
+.video-embed { position: relative; padding-bottom: 56.25%; height: 0; margin-bottom: 40px; }
+.video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ---------- discography ---------- */
+.release {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 28px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--hair);
+  align-items: start;
+}
+@media (max-width: 560px) { .release { grid-template-columns: 1fr; } }
+.release h3 { font-weight: 400; font-size: 19px; letter-spacing: 0.04em; margin-bottom: 10px; }
+.release dl { font-size: 13.5px; line-height: 1.9; color: #444; letter-spacing: 0.02em; }
+.release dt { display: inline; color: var(--gray); text-transform: uppercase; font-size: 11px; letter-spacing: 0.2em; }
+.release dd { display: inline; margin: 0 0 0 6px; }
+.release .row { display: block; }
+.release img { border: 1px solid var(--hair); }
+.credits-block {
+  border: 1px solid var(--hair);
+  padding: 28px;
+  font-size: 13.5px;
+  line-height: 2;
+  letter-spacing: 0.03em;
+  margin-bottom: 48px;
+}
+
+/* ---------- photo grid ---------- */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+.photo-grid img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- buttons & forms ---------- */
+.btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 16px 42px;
+  border: 1px solid var(--ink);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.btn:hover { background: var(--ink); color: #fff; }
+
+.subscribe {
+  background: var(--wash);
+  text-align: center;
+  padding: 88px 24px;
+  margin-top: 72px;
+}
+.subscribe h2 { font-weight: 400; font-size: 30px; }
+.subscribe p { margin-top: 18px; font-size: 15px; color: #555; }
+.sub-form { margin-top: 36px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.sub-form input[type="email"], .contact-form input, .contact-form textarea {
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  padding: 16px 18px;
+  border: 1px solid #d8d7d3;
+  background: #fff;
+  outline: none;
+}
+.sub-form input[type="email"] { width: min(340px, 80vw); }
+.sub-form input:focus, .contact-form input:focus, .contact-form textarea:focus { border-color: var(--ink); }
+.sub-form button, .contact-form button {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 16px 34px;
+  background: transparent;
+  border: 1px solid var(--ink);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.sub-form button:hover, .contact-form button:hover { background: var(--ink); color: #fff; }
+.privacy { margin-top: 26px; font-size: 12px; color: var(--gray); }
+
+.contact-form { display: grid; gap: 16px; max-width: 520px; margin: 0 auto; }
+.contact-form textarea { min-height: 160px; resize: vertical; }
+
+/* ---------- reimagined strip ---------- */
+.feature {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 88px 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--hair);
+}
+.feature h2 {
+  font-weight: 500;
+  font-size: clamp(28px, 5vw, 44px);
+  margin-top: 20px;
+  line-height: 1.15;
+  letter-spacing: 0.14em;
+}
+.feature p { margin: 26px auto 0; max-width: 520px; font-size: 15px; line-height: 1.9; color: #555; }
+
+/* ---------- footer ---------- */
+footer {
+  text-align: center;
+  padding: 56px 24px 64px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gray);
+  line-height: 2.4;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+</style>
+</head>
+<body>
+
+  <header class="masthead compact">
+    <h1 class="wordmark"><a href="index.html">Noah Official</a></h1>
+    <p class="tagline">Billboard, Music Week and DJ Times charting recording artist&nbsp;/ songwriter&nbsp;/ producer</p>
+    <nav aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="audio.html">Audio</a>
+      <a href="discography.html" class="active">Discography</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h2>Discography</h2>
+
+    <div class="credits-block">
+      <strong>ASCAP</strong> Writer ID #: 1559825<br />
+      <strong>ASCAP</strong> | Songwriter: <strong>Christofer Holland</strong> IPI Number: #340676956 | <strong>NOAH&reg;</strong> IPI: #675885873<br />
+      <strong>ASCAP</strong> Publisher ID #: 40525<br />
+      <strong>ASCAP</strong> | Publisher: <strong>Icon Worldwide Music</strong> IPI Name Number: #340690084<br /><br />
+      <strong>NOAH&reg; &mdash; United States Trademark</strong> Registration # 4264588 &mdash; Recording &amp; Performing Artist<br /><br />
+      <strong>Affiliations</strong>: Human | LGBTQ | Vegan
+    </div>
+
+    <!-- Unless noted, all releases: NOAH® — New York, New York USA
+         Label: Icon Worldwide Music · Master: Icon Worldwide Music 100% · Publishing: Icon Worldwide Music 100% -->
+
+    <article class="release">
+      <img src="images/discography/nyid-cover.png" alt="N.Y.I.D. cover art" />
+      <div>
+        <h3>N.Y.I.D.</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>08/27/2012</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>5055489238708</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/nyid-isrc.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/new-york-is-dead-2012.jpg" alt="New York is Dead cover art" />
+      <div>
+        <h3>New York is Dead</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>10/05/2012</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>700261965314</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/new-york-is-dead-2012-isrc.pdf">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/new-york-is-dead-2013.png" alt="New York is Dead (2013) cover art" />
+      <div>
+        <h3>New York is Dead (2013)</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>01/28/2013</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>887516203855</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/new-york-is-dead-2013-isrc.pdf">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/no-more-angels.jpg" alt="No More Angels cover art" />
+      <div>
+        <h3>No More Angels</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>06/13/2013</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>888174054339</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple</dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/keep-on-movin-radio.jpg" alt="Keep On Movin' Radio Mixes cover art" />
+      <div>
+        <h3>Keep On Movin&rsquo; Radio Mixes</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>07/04/2015</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>5054526771369</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/keep-on-movin-radio.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/keep-on-movin-club.jpg" alt="Keep On Movin' Club Mixes cover art" />
+      <div>
+        <h3>Keep On Movin&rsquo; Club Mixes</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>07/04/2015</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>5054526771376</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/keep-on-movin-club.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/man-in-the-making.jpg" alt="Man In The Making cover art" />
+      <div>
+        <h3>Man In The Making</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>08/07/2016</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>5054526771390</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/man-in-the-making.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/american-royalty.jpg" alt="American Royalty cover art" />
+      <div>
+        <h3>American Royalty</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>08/30/2016</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>5054526771383</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>QMNAM1600147</dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/american-royalty-freedom-trap.jpg" alt="American Royalty Freedom Trap Mix cover art" />
+      <div>
+        <h3>American Royalty &mdash; The Freedom Trap Mix</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>09/23/2016</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>5054526770621</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/american-royalty-freedom-trap.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/the-ride.jpg" alt="The Ride cover art" />
+      <div>
+        <h3>The Ride</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>02/21/2017</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>5054526388697</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/the-ride.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/music.jpg" alt="Music cover art" />
+      <div>
+        <h3>Music</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>04/18/2017</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>5054526507371</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/music.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/mechanical-animals.jpg" alt="Mechanical Animals cover art" />
+      <div>
+        <h3>Mechanical Animals</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>01/26/2018</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>5054526283893</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/mechanical-animals.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/sound-of-you.jpg" alt="Sound Of You cover art" />
+      <div>
+        <h3>Sound Of You</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>05/08/2018</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>5054526470279</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/sound-of-you.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/strum.jpg" alt="Strum cover art" />
+      <div>
+        <h3>Strum</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>09/13/2019</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd><!-- TODO: live site shows 5054526283893, which duplicates Mechanical Animals — verify correct UPC with TuneCore/AWAL records --></dd></span>
+          <span class="row"><dt>ISRC</dt><dd>GBKPL1963478</dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/wait-for-me.jpg" alt="Wait For Me cover art" />
+      <div>
+        <h3>Wait For Me</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>11/10/2022</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197187136278</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/wait-for-me.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/wanted.jpg" alt="Wanted cover art" />
+      <div>
+        <h3>Wanted</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>02/10/2023</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197187833320</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/wanted.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/babymaker.png" alt="Babymaker cover art" />
+      <div>
+        <h3>Babymaker</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>06/02/2023</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197188791896</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/babymaker.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/babymaker-erik-elias.jpg" alt="Babymaker Erik Elias Love Dub Remix cover art" />
+      <div>
+        <h3>Babymaker (Erik Elias Love Dub Remix)</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>06/16/2023</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197189116247</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>QM7282345126</dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/weekend.png" alt="Weekend cover art" />
+      <div>
+        <h3>Weekend</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>07/14/2023</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197188794248</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/weekend.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/weekend-erik-elias.jpg" alt="Weekend Erik Elias Remix cover art" />
+      <div>
+        <h3>Weekend (Erik Elias Remix)</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>08/09/2023</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd><!-- TODO: live site shows 197188794248, same as the Weekend original — verify correct UPC --></dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/weekend.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/sorry.png" alt="Sorry cover art" />
+      <div>
+        <h3>Sorry</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>09/25/2023</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197189783104</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/sorry-isrc.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/shine.png" alt="Shine cover art" />
+      <div>
+        <h3>Shine</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>10/13/2023</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197189960291</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/isrc-shine.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/stick.png" alt="Stick cover art" />
+      <div>
+        <h3>Stick</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>10/18/2023</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197190259926</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/stick-isrc.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/take-your-time.png" alt="Take Your Time cover art" />
+      <div>
+        <h3>Take Your Time</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>11/17/2023</dd></span>
+          <span class="row"><dt>Artists</dt><dd>NOAH&reg; and Erik Elias</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>Publishing</dt><dd>Icon Worldwide Music 50% | Erik Elias Music 50%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197190324693</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/take-your-time-isrc.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/if-you-change-your-mind.jpg" alt="If You Change Your Mind cover art" />
+      <div>
+        <h3>If You Change Your Mind</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>01/12/2024</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197190762549</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>QMFMG2377259</dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/changes.png" alt="Changes cover art" />
+      <div>
+        <h3>Changes</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>01/26/2024</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197189462559</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/changes-isrc.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/all-the-way.png" alt="All The Way cover art" />
+      <div>
+        <h3>All The Way</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>02/02/2024 &middot; Promo 02/16/2024</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197190476002</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/all-the-way-isrc.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/dont-love-myself.jpg" alt="Don't Love Myself cover art" />
+      <div>
+        <h3>Don&rsquo;t Love Myself</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>03/29/2024</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>198391569173</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/dont-love-myself-isrc.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/come-together.png" alt="Come Together cover art" />
+      <div>
+        <h3>Come Together</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>04/26/2024</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197189469374</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/come-together.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/the-ride-reprise.jpg" alt="The Ride (The Reprise Mixes) cover art" />
+      <div>
+        <h3>The Ride (The Reprise Mixes)</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd><!-- TODO: release date missing on live site --></dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>197190265330</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/the-ride-reprise-isrc.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+    <article class="release">
+      <img src="images/discography/supernatural.png" alt="Supernatural cover art" />
+      <div>
+        <h3>Supernatural</h3>
+        <dl>
+          <span class="row"><dt>Released</dt><dd>01/31/2025</dd></span>
+          <span class="row"><dt>Label</dt><dd>Icon Worldwide Music</dd></span>
+          <span class="row"><dt>Master / Publishing</dt><dd>Icon Worldwide Music 100%</dd></span>
+          <span class="row"><dt>UPC</dt><dd>199066231241</dd></span>
+          <span class="row"><dt>ISRC</dt><dd>multiple — <a href="assets/isrc/supernatural-isrc.png">list</a></dd></span>
+        </dl>
+      </div>
+    </article>
+
+  </main>
+
+  <footer>
+    NOAH&reg; is a registered trademark &mdash; US Reg. #4264588<br />
+    &copy; 2026 Fairfield &amp; Company LLC. All rights reserved. New York City.
+  </footer>
+
+</body>
+</html>

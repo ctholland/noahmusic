@@ -1,0 +1,6 @@
+.DS_Store
+NEW SITE/
+*.zip
+assets/isrc/
+Claude outputs/
+download-assets.sh

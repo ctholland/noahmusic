@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noah Reimagined. — Official</title>
+  <meta name="description" content="NOAH® Reimagined — A decade of chart-proven originals, rebuilt. New York City." />
+  <meta property="og:title" content="Noah Reimagined." />
+  <meta property="og:description" content="Billboard. Music Week. DJ Times. Reimagined." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    @font-face {
+      font-family: 'ReznorBroken';
+      src: url('ReznorBroken.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg:      #080808;
+      --bg2:     #101010;
+      --bg3:     #161616;
+      --border:  #1e1e1e;
+      --border2: #2a2a2a;
+      --silver:  #b0aeaa;
+      --silver-d: rgba(176,174,170,0.08);
+      --white:   #f0ede8;
+      --mid:     #808078;
+      --dim:     #404040;
+      --reznor:  'ReznorBroken', sans-serif;
+      --mono:    'DM Mono', 'Courier New', monospace;
+      --sans:    'Bebas Neue', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ─────────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      overflow: hidden;
+    }
+
+    /* Video background */
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+      filter: grayscale(30%) contrast(1.1);
+    }
+
+    /* Dark overlay so text is always readable */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(8,8,8,0.97) 0%, rgba(8,8,8,0.3) 50%, rgba(8,8,8,0.5) 100%),
+        linear-gradient(to right, rgba(8,8,8,0.6) 0%, transparent 60%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 0 64px 72px;
+      max-width: 900px;
+    }
+
+    .hero-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.4s forwards;
+    }
+
+    /* Two-line Reznor wordmark */
+    .hero-wordmark {
+      font-family: var(--reznor);
+      line-height: 0.88;
+      letter-spacing: 0.01em;
+      color: var(--white);
+      margin-bottom: 28px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s forwards;
+    }
+
+    .hero-wordmark .line1 {
+      display: block;
+      font-size: clamp(72px, 10vw, 140px);
+    }
+
+    .hero-wordmark .line2 {
+      display: block;
+      font-size: clamp(48px, 6.5vw, 92px);
+      color: var(--silver);
+    }
+
+    .hero-wordmark .reg {
+      font-family: var(--mono);
+      font-size: clamp(10px, 1vw, 16px);
+      color: var(--silver);
+      vertical-align: super;
+    }
+
+    .hero-sub {
+      font-size: 11px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--mid);
+      letter-spacing: 0.08em;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.8s forwards;
+    }
+
+    .hero-credentials {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.0s forwards;
+    }
+
+    .cred {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .cred-pub {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    .cred-val {
+      font-size: 12px;
+      color: var(--silver);
+      font-weight: 400;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.2s forwards;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--bg);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 13px 28px;
+      transition: opacity 0.15s, transform 0.15s;
+    }
+
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--mid);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 12px 28px;
+      border: 1px solid var(--border2);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-ghost:hover { border-color: var(--silver); color: var(--silver); }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      right: 48px;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dim);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.6s forwards;
+    }
+
+    .scroll-hint::after {
+      content: '';
+      width: 40px;
+      height: 1px;
+      background: var(--dim);
+    }
+
+    /* ── SHARED SECTION STYLES ────────────────────── */
+    .section-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 64px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      gap: 0;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--silver);
+      white-space: nowrap;
+      padding-right: 24px;
+    }
+
+    .section-rule {
+      flex: 1;
+      height: 1px;
+      background: var(--border2);
+    }
+
+    /* ── ABOUT THE PROJECT ────────────────────────── */
+    .about-section {
+      padding: 88px 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .about-left {}
+
+    .about-statement {
+      font-family: var(--mono);
+      font-size: clamp(18px, 2.2vw, 26px);
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    .about-statement em {
+      color: var(--silver);
+      font-style: normal;
+    }
+
+    .about-body {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .credential-row {
+      display: flex;
+      background: var(--bg2);
+      padding: 16px 20px;
+      gap: 16px;
+      align-items: flex-start;
+      transition: background 0.15s;
+    }
+
+    .credential-row:hover { background: var(--bg3); }
+
+    .cr-label {
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dim);
+      min-width: 100px;
+      padding-top: 2px;
+    }
+
+    .cr-value {
+      font-size: 12px;
+      color: var(--silver);
+      line-height: 1.5;
+    }
+
+    /* ── TRACKS ───────────────────────────────────── */
+    .tracks-section {
+      padding: 88px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    /* SoundCloud embed wrapper */
+    .sc-embed {
+      border: 1px solid var(--border2);
+      background: var(--bg);
+      overflow: hidden;
+      margin-bottom: 2px;
+    }
+
+    .sc-embed iframe { display: block; width: 100%; }
+
+    /* Track list */
+    .track-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 32px;
+    }
+
+    .track-item {
+      display: grid;
+      grid-template-columns: 64px 40px 1fr auto;
+      align-items: center;
+      gap: 20px;
+      background: var(--bg);
+      padding: 12px 24px;
+      transition: background 0.15s;
+    }
+
+    .track-item:hover { background: var(--bg3); }
+    .track-item:hover .track-arrow { color: var(--silver); transform: translateX(3px); }
+    .track-item:hover .track-art { opacity: 1; }
+
+    .track-art {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+      display: block;
+      filter: grayscale(20%);
+    }
+
+    .track-num {
+      font-family: var(--sans);
+      font-size: 18px;
+      color: var(--dim);
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+
+    .track-info {}
+
+    .track-title {
+      font-family: var(--sans);
+      font-size: 20px;
+      letter-spacing: 0.06em;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .track-meta {
+      font-size: 10px;
+      color: var(--dim);
+      letter-spacing: 0.1em;
+    }
+
+    .track-chart {
+      font-size: 10px;
+      color: var(--mid);
+      letter-spacing: 0.08em;
+      text-align: right;
+    }
+
+    .track-arrow {
+      display: inline-block;
+      transition: color 0.15s, transform 0.15s;
+      color: var(--dim);
+      margin-left: 8px;
+    }
+
+    /* ── RIGHTS / PITCH INFO ──────────────────────── */
+    .rights-section {
+      padding: 88px 0;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+
+    .rights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    .rights-item {
+      background: var(--bg2);
+      padding: 32px 28px;
+      transition: background 0.15s;
+    }
+
+    .rights-item:hover { background: var(--bg3); }
+
+    .rights-icon {
+      font-family: var(--reznor);
+      font-size: 36px;
+      color: var(--silver);
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    .rights-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--silver);
+      margin-bottom: 10px;
+    }
+
+    .rights-body {
+      font-size: 11px;
+      font-weight: 300;
+      color: var(--mid);
+      line-height: 1.75;
+    }
+
+    /* ── CONTACT / CTA ────────────────────────────── */
+    .contact-section {
+      padding: 100px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .contact-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .contact-wordmark {
+      font-family: var(--reznor);
+      font-size: 56px;
+      color: var(--white);
+      line-height: 0.9;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-wordmark .line2 {
+      display: block;
+      font-size: 36px;
+      color: var(--mid);
+    }
+
+    .contact-sub {
+      font-size: 11px;
+      color: var(--dim);
+      letter-spacing: 0.12em;
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border: 1px solid var(--border2);
+      color: var(--mid);
+      text-decoration: none;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--silver);
+      color: var(--silver);
+      background: var(--silver-d);
+    }
+
+    .contact-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .contact-email {
+      font-size: 11px;
+      color: var(--dim);
+      letter-spacing: 0.08em;
+    }
+
+    .contact-email a {
+      color: var(--silver);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border2);
+      transition: border-color 0.15s;
+    }
+
+    .contact-email a:hover { border-bottom-color: var(--silver); }
+
+    /* ── FOOTER ───────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .foot-logo {
+      font-family: var(--reznor);
+      font-size: 18px;
+      color: var(--dim);
+      letter-spacing: 0.04em;
+    }
+
+    .foot-copy {
+      font-size: 10px;
+      color: var(--dim);
+      letter-spacing: 0.06em;
+    }
+
+    .foot-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .foot-links a {
+      font-size: 10px;
+      color: var(--dim);
+      text-decoration: none;
+      letter-spacing: 0.12em;
+      transition: color 0.15s;
+    }
+
+    .foot-links a:hover { color: var(--silver); }
+
+    /* ── ANIMATIONS ───────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── NAV ──────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 20px 48px;
+      transition: background 0.3s, border-color 0.3s;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav.scrolled {
+      background: rgba(8,8,8,0.97);
+      border-bottom-color: var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--silver); }
+
+    /* ── MOBILE ───────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { gap: 20px; }
+      .nav-links a { font-size: 9px; }
+
+      .hero-content { padding: 0 24px 56px; }
+      .scroll-hint { display: none; }
+
+      .section-inner { padding: 0 24px; }
+      .about-section, .tracks-section, .rights-section { padding: 56px 0; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .rights-grid { grid-template-columns: 1fr; }
+      .track-item {
+        grid-template-columns: 48px 28px 1fr;
+        gap: 12px;
+        padding: 10px 16px;
+      }
+      .track-chart { display: none; }
+      .track-art { width: 48px; height: 48px; }
+      .contact-inner { padding: 0 24px; }
+      footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav id="nav">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#tracks">Tracks</a></li>
+      <li><a href="#rights">Rights</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">noahmusic.com</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+
+    <!-- Background video — defocused bokeh city lights -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="images/defocused.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Billboard &nbsp;·&nbsp; Music Week &nbsp;·&nbsp; DJ Times &nbsp;·&nbsp; New York City</p>
+
+      <!-- Capital N = reversed N in Reznor Broken -->
+      <h1 class="hero-wordmark">
+        <span class="line1">Noah<span class="reg">®</span></span>
+        <span class="line2">Reimagined.</span>
+      </h1>
+
+      <p class="hero-sub">A decade of chart-proven originals, rebuilt.</p>
+
+      <div class="hero-credentials">
+        <div class="cred">
+          <span class="cred-pub">UK Music Week</span>
+          <span class="cred-val">Multiple Top 20</span>
+        </div>
+        <div class="cred">
+          <span class="cred-pub">Billboard Dance</span>
+          <span class="cred-val">#39 Chart Entry</span>
+        </div>
+        <div class="cred">
+          <span class="cred-pub">DJ Times</span>
+          <span class="cred-val">National Club Chart</span>
+        </div>
+        <div class="cred">
+          <span class="cred-pub">Sync</span>
+          <span class="cred-val">Blumhouse Production</span>
+        </div>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#tracks" class="btn-primary">Listen</a>
+        <a href="#contact" class="btn-ghost">Label Inquiries</a>
+      </div>
+    </div>
+
+    <p class="scroll-hint">Scroll</p>
+
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="about-section" id="about">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-label">About The Project</span>
+        <span class="section-rule"></span>
+      </div>
+      <div class="about-grid">
+        <div class="about-left">
+          <p class="about-statement">
+            These songs already existed.<br>
+            They were already on the charts.<br>
+            <em>Now they sound like what they always wanted to be.</em>
+          </p>
+          <p class="about-body">NOAH Reimagined takes seven of the strongest originals from a catalog spanning 2012–2024 and rebuilds them with contemporary production. Not remixes. Not covers. The same compositions — the same melodies, the same lyrics, the same authorship — reimagined using Sunolicious, a production framework built around AI-assisted arrangement and sound design.</p>
+          <p class="about-body">The source material is registered with the US Copyright Office, documented with ASCAP, and chart-proven across Billboard, UK Music Week, and DJ Times. The rights are clean. The catalog is real. The tools evolved — the authorship didn't.</p>
+        </div>
+        <div class="about-right">
+          <div class="credential-row">
+            <span class="cr-label">Artist</span>
+            <span class="cr-value">NOAH® / Christofer Holland</span>
+          </div>
+          <div class="credential-row">
+            <span class="cr-label">Label</span>
+            <span class="cr-value">Icon Worldwide Music</span>
+          </div>
+          <div class="credential-row">
+            <span class="cr-label">Publisher</span>
+            <span class="cr-value">Icon Worldwide Music — ASCAP #40525</span>
+          </div>
+          <div class="credential-row">
+            <span class="cr-label">Writer IPI</span>
+            <span class="cr-value">#340676956</span>
+          </div>
+          <div class="credential-row">
+            <span class="cr-label">Trademark</span>
+            <span class="cr-value">NOAH® US Reg. #4264588</span>
+          </div>
+          <div class="credential-row">
+            <span class="cr-label">Masters</span>
+            <span class="cr-value">Icon Worldwide Music 100%</span>
+          </div>
+          <div class="credential-row">
+            <span class="cr-label">Entity</span>
+            <span class="cr-value">Fairfield & Company LLC (NM)</span>
+          </div>
+          <div class="credential-row">
+            <span class="cr-label">Production</span>
+            <span class="cr-value">Sunolicious — AI-assisted reimagining</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRACKS ── -->
+  <section class="tracks-section" id="tracks">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-label">NOAH Reimagined — 7 Tracks</span>
+        <span class="section-rule"></span>
+      </div>
+
+      <!-- SoundCloud embed — replace src with your private playlist embed URL -->
+      <div class="sc-embed">
+        <iframe
+          width="100%"
+          height="450"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="REPLACE_WITH_YOUR_SOUNDCLOUD_PLAYLIST_EMBED_URL">
+        </iframe>
+      </div>
+
+      <!-- Track listing -->
+      <div class="track-list">
+        <div class="track-item">
+          <img class="track-art" src="images/man-in-the-making.png" alt="Man In The Making" />
+          <span class="track-num">01</span>
+          <div class="track-info">
+            <p class="track-title">Man In The Making</p>
+            <p class="track-meta">2016 · Icon Worldwide Music</p>
+          </div>
+          <span class="track-chart">#9 UK Music Week<span class="track-arrow"> →</span></span>
+        </div>
+        <div class="track-item">
+          <img class="track-art" src="images/keep-on-movin.png" alt="Keep On Movin'" />
+          <span class="track-num">02</span>
+          <div class="track-info">
+            <p class="track-title">Keep On Movin'</p>
+            <p class="track-meta">2013–15 · Icon Worldwide Music</p>
+          </div>
+          <span class="track-chart">#39 Billboard / #12 UK Music Week<span class="track-arrow"> →</span></span>
+        </div>
+        <div class="track-item">
+          <img class="track-art" src="images/sunrise.png" alt="Sunrise" />
+          <span class="track-num">03</span>
+          <div class="track-info">
+            <p class="track-title">Sunrise</p>
+            <p class="track-meta">2024 · Icon Worldwide Music</p>
+          </div>
+          <span class="track-chart">#14 UK Music Week<span class="track-arrow"> →</span></span>
+        </div>
+        <div class="track-item">
+          <img class="track-art" src="images/the-ride-reprise.png" alt="The Ride" />
+          <span class="track-num">04</span>
+          <div class="track-info">
+            <p class="track-title">The Ride</p>
+            <p class="track-meta">2017 · Icon Worldwide Music</p>
+          </div>
+          <span class="track-chart">#13 UK Music Week<span class="track-arrow"> →</span></span>
+        </div>
+        <div class="track-item">
+          <img class="track-art" src="images/strum.png" alt="Strum" />
+          <span class="track-num">05</span>
+          <div class="track-info">
+            <p class="track-title">Strum</p>
+            <p class="track-meta">2019 · Icon Worldwide Music</p>
+          </div>
+          <span class="track-chart">ISRC: GBKPL1963478<span class="track-arrow"> →</span></span>
+        </div>
+        <div class="track-item">
+          <img class="track-art" src="images/sound-of-you.png" alt="Sound Of You" />
+          <span class="track-num">06</span>
+          <div class="track-info">
+            <p class="track-title">Sound Of You</p>
+            <p class="track-meta">2018 · Icon Worldwide Music</p>
+          </div>
+          <span class="track-chart">Icon Worldwide Music<span class="track-arrow"> →</span></span>
+        </div>
+        <div class="track-item">
+          <img class="track-art" src="images/mechanical-animals.png" alt="Mechanical Animals" />
+          <span class="track-num">07</span>
+          <div class="track-info">
+            <p class="track-title">Mechanical Animals</p>
+            <p class="track-meta">2018 · Icon Worldwide Music</p>
+          </div>
+          <span class="track-chart">Icon Worldwide Music<span class="track-arrow"> →</span></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── RIGHTS ── -->
+  <section class="rights-section" id="rights">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-label">Rights & Licensing</span>
+        <span class="section-rule"></span>
+      </div>
+      <div class="rights-grid">
+        <div class="rights-item">
+          <div class="rights-icon">©</div>
+          <p class="rights-title">Composition Rights</p>
+          <p class="rights-body">All compositions written by Christofer Holland. Registered with the US Copyright Office. ASCAP documented. No co-writers except where noted — clean chain of title throughout.</p>
+        </div>
+        <div class="rights-item">
+          <div class="rights-icon">M</div>
+          <p class="rights-title">Master Ownership</p>
+          <p class="rights-body">Masters owned 100% by Icon Worldwide Music, a wholly owned imprint of Fairfield & Company LLC (New Mexico). No third-party master claims. Stems available for delivery.</p>
+        </div>
+        <div class="rights-item">
+          <div class="rights-icon">®</div>
+          <p class="rights-title">Artist Trademark</p>
+          <p class="rights-body">NOAH® is a registered US trademark (Reg. #4264588) held by Christofer Holland. The brand, catalog, and publishing infrastructure have been active and maintained since 2012.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-wordmark">
+        <span>Noah<sup style="font-family:var(--mono); font-size:14px; color:var(--silver); vertical-align:super;">®</sup></span>
+        <span class="line2">Reimagined.</span>
+      </div>
+      <p class="contact-sub">Label inquiries, licensing & sync · Icon Worldwide Music / Fairfield & Company LLC</p>
+      <div class="contact-links">
+        <a href="https://soundcloud.com/noahofficialusa" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-dot"></span>SoundCloud
+        </a>
+        <a href="https://open.spotify.com/artist/1IzLlQKdGLVnJMBEIPpAMo" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-dot"></span>Spotify
+        </a>
+        <a href="https://music.apple.com/us/artist/noah/306665093" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-dot"></span>Apple Music
+        </a>
+        <a href="https://www.instagram.com/noahofficialusa" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-dot"></span>Instagram
+        </a>
+      </div>
+      <p class="contact-email">
+        For label and licensing inquiries: <a href="/cdn-cgi/l/email-protection#720b1d070032171f131b1e5c111d1f"><span class="__cf_email__" data-cfemail="8ff6e0fafdcfeae2eee6e3a1ece0e2">[email&#160;protected]</span></a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span class="foot-logo">Noah Reimagined.</span>
+    <ul class="foot-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#tracks">Tracks</a></li>
+      <li><a href="#rights">Rights</a></li>
+      <li><a href="index.html">noahmusic.com</a></li>
+    </ul>
+    <p class="foot-copy">© 2025 Icon Worldwide Music / Fairfield & Company LLC</p>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.
